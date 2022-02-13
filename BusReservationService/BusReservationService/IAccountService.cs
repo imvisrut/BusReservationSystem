@@ -1,6 +1,5 @@
 ﻿using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
 
 namespace BusReservationService
 {
@@ -9,11 +8,9 @@ namespace BusReservationService
     public interface IAccountService
     {
         [OperationContract]
-        // [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string Login(string username, string password);
 
         [OperationContract]
-        // [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string Register(User user);
     }
 
@@ -25,6 +22,15 @@ namespace BusReservationService
         string email;
         string username;
         string password;
+
+        public User(string email, string username, string password)
+        {
+            this.email = email;
+            this.username = username;
+            this.password = password;
+        }
+
+        public User() {  }
 
         [DataMember]
         public string UserName
