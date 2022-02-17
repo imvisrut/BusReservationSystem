@@ -109,7 +109,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\BusService\BusService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BusService\configuration91.svcinfo" />
+    <None Include="Connected Services\BusService\configuration.svcinfo" />
+    <None Include="Connected Services\BusService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Bus.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="AddBus.aspx" />
     <None Include="Connected Services\AccountService\configuration91.svcinfo" />
     <None Include="Connected Services\AccountService\configuration.svcinfo" />
     <None Include="Connected Services\AccountService\Reference.svcmap">
@@ -156,6 +167,19 @@
     <None Include="Connected Services\AccountService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\BusService\service.wsdl" />
+    <None Include="Connected Services\BusService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BusService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\BusService\WebClient.BusService.Bus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\BusService\WebClient.BusService.Seat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
@@ -271,7 +295,19 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Bus.aspx.cs">
+      <DependentUpon>Bus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bus.aspx.designer.cs">
+      <DependentUpon>Bus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\AccountService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\BusService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -329,6 +365,13 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddBus.aspx.cs">
+      <DependentUpon>AddBus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddBus.aspx.designer.cs">
+      <DependentUpon>AddBus.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -354,6 +397,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AccountService\" />
+    <WCFMetadataStorage Include="Connected Services\BusService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="WebClient.WebForm2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="margin: 4rem 0px;">
+  <div style="margin: 4rem 0px;">
       <div class="form-group">
         <label>Username</label>
         <asp:TextBox runat="server" CssClass="form-control" ID="Username" />

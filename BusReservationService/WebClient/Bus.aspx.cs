@@ -7,14 +7,15 @@ using System.Web.UI.WebControls;
 
 namespace WebClient
 {
-    public partial class _Default : Page
+    public partial class Bus : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int id = int.Parse(Request.QueryString["id"]);
             var svc = new BusService.BusServiceClient();
-            var buses = svc.GetBuses();
-            BusList.DataSource = buses;
-            BusList.DataBind();
+            var seats = svc.GetSeats(id);
+            Seats.DataSource = seats;
+            Seats.DataBind();
         }
     }
 }

@@ -1,3 +1,4 @@
+# User Schema
 CREATE TABLE [dbo].[User] (
     [Id]       INT            IDENTITY (1, 1) NOT NULL,
     [Username] NVARCHAR (50)  NOT NULL,
@@ -5,3 +6,22 @@ CREATE TABLE [dbo].[User] (
     [Password] NVARCHAR (MAX) NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
+# Bus Schema
+CREATE TABLE [dbo].[Bus] (
+    [Id]          INT            IDENTITY (1, 1) NOT NULL,
+    [BusName]     NVARCHAR (100) NOT NULL UNIQUE,
+    [Source]      NVARCHAR (100) NOT NULL,
+    [Destination] NVARCHAR (100) NOT NULL,
+    [Time]        NVARCHAR (150) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+# Seat Schema
+CREATE TABLE [dbo].[Seat]
+(
+    [Id] INT NOT NULL PRIMARY KEY,
+    [BusId] INT NOT NULL, 
+    [IsAvailable] BIT NOT NULL,
+
+)
