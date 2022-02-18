@@ -5,6 +5,7 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/BusService" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IBusService_AddBus_InputMessage">
@@ -25,11 +26,11 @@
   <wsdl:message name="IBusService_GetSeats_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSeatsResponse" />
   </wsdl:message>
-  <wsdl:message name="IBusService_BookSeat_InputMessage">
-    <wsdl:part name="parameters" element="tns:BookSeat" />
+  <wsdl:message name="IBusService_BookSeats_InputMessage">
+    <wsdl:part name="parameters" element="tns:BookSeats" />
   </wsdl:message>
-  <wsdl:message name="IBusService_BookSeat_OutputMessage">
-    <wsdl:part name="parameters" element="tns:BookSeatResponse" />
+  <wsdl:message name="IBusService_BookSeats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BookSeatsResponse" />
   </wsdl:message>
   <wsdl:portType name="IBusService">
     <wsdl:operation name="AddBus">
@@ -44,9 +45,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBusService/GetSeats" message="tns:IBusService_GetSeats_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBusService/GetSeatsResponse" message="tns:IBusService_GetSeats_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="BookSeat">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBusService/BookSeat" message="tns:IBusService_BookSeat_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBusService/BookSeatResponse" message="tns:IBusService_BookSeat_OutputMessage" />
+    <wsdl:operation name="BookSeats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusService/BookSeats" message="tns:IBusService_BookSeats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusService/BookSeatsResponse" message="tns:IBusService_BookSeats_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBusService" type="tns:IBusService">
@@ -78,8 +79,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="BookSeat">
-      <soap:operation soapAction="http://tempuri.org/IBusService/BookSeat" style="document" />
+    <wsdl:operation name="BookSeats">
+      <soap:operation soapAction="http://tempuri.org/IBusService/BookSeats" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

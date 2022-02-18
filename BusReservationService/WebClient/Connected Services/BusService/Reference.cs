@@ -221,11 +221,11 @@ namespace WebClient.BusService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusService/GetSeats", ReplyAction="http://tempuri.org/IBusService/GetSeatsResponse")]
         System.Threading.Tasks.Task<WebClient.BusService.Seat[]> GetSeatsAsync(int busId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusService/BookSeat", ReplyAction="http://tempuri.org/IBusService/BookSeatResponse")]
-        WebClient.BusService.Seat[] BookSeat(int seatId, string userToken);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusService/BookSeats", ReplyAction="http://tempuri.org/IBusService/BookSeatsResponse")]
+        void BookSeats(int[] seatIds, string userToken);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusService/BookSeat", ReplyAction="http://tempuri.org/IBusService/BookSeatResponse")]
-        System.Threading.Tasks.Task<WebClient.BusService.Seat[]> BookSeatAsync(int seatId, string userToken);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusService/BookSeats", ReplyAction="http://tempuri.org/IBusService/BookSeatsResponse")]
+        System.Threading.Tasks.Task BookSeatsAsync(int[] seatIds, string userToken);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -279,12 +279,12 @@ namespace WebClient.BusService {
             return base.Channel.GetSeatsAsync(busId);
         }
         
-        public WebClient.BusService.Seat[] BookSeat(int seatId, string userToken) {
-            return base.Channel.BookSeat(seatId, userToken);
+        public void BookSeats(int[] seatIds, string userToken) {
+            base.Channel.BookSeats(seatIds, userToken);
         }
         
-        public System.Threading.Tasks.Task<WebClient.BusService.Seat[]> BookSeatAsync(int seatId, string userToken) {
-            return base.Channel.BookSeatAsync(seatId, userToken);
+        public System.Threading.Tasks.Task BookSeatsAsync(int[] seatIds, string userToken) {
+            return base.Channel.BookSeatsAsync(seatIds, userToken);
         }
     }
 }

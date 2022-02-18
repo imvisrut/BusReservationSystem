@@ -42,9 +42,18 @@ namespace BusService
             }
         }
 
-        public List<Seat> BookSeat(int seatId, string userToken)
+        public void BookSeats(int[] seatIds, string userToken)
         {
-            throw new System.NotImplementedException();
+            using (SqlConnection _con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnection"].ToString()))
+            {
+                _con.Open();
+                for (int i = 0; i < seatIds.Length; i++)
+                {
+                    SqlCommand cmd2 = new SqlCommand("UPDATE [Seat] SET IsAvailable = 0 WHERE Id = @SeatId", _con);
+                    cmd2.Parameters.AddWithValue("@SeatId", seatIds[i]);
+                    cmd2.ExecuteNonQuery();
+                }
+            }
         }
 
         public List<Bus> GetBuses()

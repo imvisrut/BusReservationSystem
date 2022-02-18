@@ -26,6 +26,7 @@
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="bc7f6f4d-4c38-4dae-82dc-f7047760d026" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BusService/Service1/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="5e171162-2ecd-4d7c-9771-fc10d1ae0c70" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BusService/Service1/mex" />
     <MetadataFile FileName="BusService.xsd" MetadataType="Schema" ID="838ae5d7-2747-4744-be68-883783e164d3" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BusService/Service1/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="03928f03-4718-4e21-9aac-70e0465ad764" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BusService/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

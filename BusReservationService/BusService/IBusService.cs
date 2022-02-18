@@ -21,7 +21,7 @@ namespace BusService
         List<Seat> GetSeats(int busId);
 
         [OperationContract]
-        List<Seat> BookSeat(int seatId, string userToken);
+        void BookSeats(int[] seatIds, string userToken);
     }
 
     [DataContract]
