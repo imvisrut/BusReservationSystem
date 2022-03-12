@@ -16,5 +16,14 @@ namespace WebClient
             BusList.DataSource = buses;
             BusList.DataBind();
         }
+
+        protected void SearchClick(Object sender, EventArgs e)
+        {
+            var svc = new BusService.BusServiceClient();
+            var searchInput = SearchInput.Text.ToString();
+            var buses = svc.GetSearchedBus(searchInput);
+            BusList.DataSource = buses;
+            BusList.DataBind();
+        }
     }
 }

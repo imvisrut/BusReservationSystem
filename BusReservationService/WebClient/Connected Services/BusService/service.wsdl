@@ -20,6 +20,12 @@
   <wsdl:message name="IBusService_GetBuses_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetBusesResponse" />
   </wsdl:message>
+  <wsdl:message name="IBusService_GetSearchedBus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchedBus" />
+  </wsdl:message>
+  <wsdl:message name="IBusService_GetSearchedBus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchedBusResponse" />
+  </wsdl:message>
   <wsdl:message name="IBusService_GetSeats_InputMessage">
     <wsdl:part name="parameters" element="tns:GetSeats" />
   </wsdl:message>
@@ -40,6 +46,10 @@
     <wsdl:operation name="GetBuses">
       <wsdl:input wsaw:Action="http://tempuri.org/IBusService/GetBuses" message="tns:IBusService_GetBuses_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBusService/GetBusesResponse" message="tns:IBusService_GetBuses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchedBus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusService/GetSearchedBus" message="tns:IBusService_GetSearchedBus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusService/GetSearchedBusResponse" message="tns:IBusService_GetSearchedBus_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetSeats">
       <wsdl:input wsaw:Action="http://tempuri.org/IBusService/GetSeats" message="tns:IBusService_GetSeats_InputMessage" />
@@ -63,6 +73,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetBuses">
       <soap:operation soapAction="http://tempuri.org/IBusService/GetBuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchedBus">
+      <soap:operation soapAction="http://tempuri.org/IBusService/GetSearchedBus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

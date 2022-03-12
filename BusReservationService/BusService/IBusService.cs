@@ -18,6 +18,9 @@ namespace BusService
         List<Bus> GetBuses();
 
         [OperationContract]
+        List<Bus> GetSearchedBus(string searchKeywords);
+
+        [OperationContract]
         List<Seat> GetSeats(int busId);
 
         [OperationContract]

@@ -2,6 +2,12 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+    
+    <div class="input-group mb-3">
+      <asp:TextBox runat="server" ID="SearchInput" CssClass="form-control" placeholder="Bus Name"></asp:TextBox>
+      <asp:Button runat="server" ID="SearchButton" CssClass="btn btn-secondary" Text="Search" OnClick="SearchClick"></asp:Button>
+    </div>
+
     <asp:ListView ID="BusList" runat="server">
         <ItemTemplate>
             <div class="row">

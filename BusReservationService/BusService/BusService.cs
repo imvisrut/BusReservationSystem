@@ -80,6 +80,30 @@ namespace BusService
             }
         }
 
+        public List<Bus> GetSearchedBus(string searchKeywords)
+        {
+            using (SqlConnection _con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnection"].ToString()))
+            {
+                SqlCommand cmd = new SqlCommand($"SELECT * FROM [Bus] WHERE BusName LIKE '%{searchKeywords}%';", _con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet dt_Login = new DataSet();
+                da.Fill(dt_Login, "table");
+
+                List<Bus> buses = new List<Bus>();
+                for (int i = 0; i < dt_Login.Tables[0].Rows.Count; i++)
+                {
+                    DataRow dr = dt_Login.Tables[0].Rows[i];
+                    var busId = int.Parse(dr[0].ToString());
+                    var busName = dr[1].ToString();
+                    var src = dr[2].ToString();
+                    var dest = dr[3].ToString();
+                    var time = dr[4].ToString();
+                    buses.Add(new Bus(busId, busName, src, dest, time));
+                }
+                return buses;
+            }
+        }
+
         public List<Seat> GetSeats(int busId)
         {
             using (SqlConnection _con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnection"].ToString()))

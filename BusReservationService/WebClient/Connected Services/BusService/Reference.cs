@@ -215,6 +215,12 @@ namespace WebClient.BusService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusService/GetBuses", ReplyAction="http://tempuri.org/IBusService/GetBusesResponse")]
         System.Threading.Tasks.Task<WebClient.BusService.Bus[]> GetBusesAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusService/GetSearchedBus", ReplyAction="http://tempuri.org/IBusService/GetSearchedBusResponse")]
+        WebClient.BusService.Bus[] GetSearchedBus(string searchKeywords);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusService/GetSearchedBus", ReplyAction="http://tempuri.org/IBusService/GetSearchedBusResponse")]
+        System.Threading.Tasks.Task<WebClient.BusService.Bus[]> GetSearchedBusAsync(string searchKeywords);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusService/GetSeats", ReplyAction="http://tempuri.org/IBusService/GetSeatsResponse")]
         WebClient.BusService.Seat[] GetSeats(int busId);
         
@@ -269,6 +275,14 @@ namespace WebClient.BusService {
         
         public System.Threading.Tasks.Task<WebClient.BusService.Bus[]> GetBusesAsync() {
             return base.Channel.GetBusesAsync();
+        }
+        
+        public WebClient.BusService.Bus[] GetSearchedBus(string searchKeywords) {
+            return base.Channel.GetSearchedBus(searchKeywords);
+        }
+        
+        public System.Threading.Tasks.Task<WebClient.BusService.Bus[]> GetSearchedBusAsync(string searchKeywords) {
+            return base.Channel.GetSearchedBusAsync(searchKeywords);
         }
         
         public WebClient.BusService.Seat[] GetSeats(int busId) {
